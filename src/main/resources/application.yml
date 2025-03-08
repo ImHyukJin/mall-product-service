@@ -1,7 +1,59 @@
+spring:
+  profiles:
+    active: local
+    group:
+      local: local, common, secret
+      blue: blue, common, secret
+      green: green, common, secret 
+      
 server:
-  port: 8081
+  env: blue
+
+---
 
 spring:
+  config:
+    activate:
+      on-profile: local
+      
+server:
+  port: 8080
+  address: localhost
+  
+serverName: local_server
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: blue
+      
+server:
+  port: 8080
+  address: 52.78.112.137
+  
+serverName: blue_server
+---
+
+spring:
+  config:
+    activate:
+      on-profile: green
+      
+server:
+  port: 8081
+  address: 52.78.112.137
+  
+serverName: green_server
+
+---
+
+
+spring:
+  config:
+    activate:
+      on-profile: common
   datasource:
     url: jdbc:mysql://mall-mysql.cpcauwygsgm8.ap-northeast-2.rds.amazonaws.com:3306/mall_product_service #ec2 환경변수
     username: admin

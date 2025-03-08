@@ -57,7 +57,7 @@ public class ProductController {
 	}
 	
 	//상품 추가 (post)
-	@PostMapping("/")
+	@PostMapping("/add")
 	public Product addProduct(@RequestBody Product product) {
 		return productRepository.save(product);
 	}

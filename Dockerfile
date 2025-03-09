@@ -11,5 +11,3 @@ COPY ${JAR_FILE} app.jar
 # Spring Boot 애플리케이션 실행
 ENTRYPOINT ["java", "-Dspring.profiles.active=${PROFILES}", "-Dserver.env=${ENV}","-jar","app.jar"]
 
-# 컨테이너가 외부와 통신할 포트 설정
-# EXPOSE 8081

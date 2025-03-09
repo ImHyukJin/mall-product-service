@@ -11,3 +11,4 @@ COPY ${JAR_FILE} app.jar
 # Spring Boot 局敲府纳捞记 角青
 ENTRYPOINT ["java", "-Dspring.profiles.active=${PROFILES}", "-Dserver.env=${ENV}","-jar","app.jar"]
 
+EXPOSE 8080

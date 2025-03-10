@@ -7,7 +7,7 @@
   <script>
     // 상품 목록을 API에서 가져오는 함수
     function loadProducts() {
-      fetch('/api/products/')
+      fetch('/api/product/')
         .then(response => response.json())
         .then(data => {
           const productList = document.getElementById("productList");
@@ -30,7 +30,7 @@
         price: parseFloat(price)
       };
 
-      fetch('/api/products/', {
+      fetch('/api/product/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

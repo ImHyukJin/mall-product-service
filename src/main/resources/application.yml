@@ -1,7 +1,7 @@
----
-spring:
-  profiles:
-    active: ${PROFILES:blue}  # PROFILES가 없으면 'default'를 사용
+#---
+#spring:
+#  profiles:
+#    active: ${PROFILES:blue}  # PROFILES가 없으면 'default'를 사용
 ---  
 spring:
   profiles:
@@ -24,6 +24,7 @@ spring:
 server:
   port: 8080
   address: localhost 
+  
 serverName: local_server
 
 ---
@@ -36,6 +37,7 @@ spring:
 server:
   port: 8080
   address: 52.78.112.137
+  
 serverName: blue_server
 ---
 
@@ -47,6 +49,7 @@ spring:
 server:
   port: 8081
   address: 52.78.112.137
+  
 serverName: green_server
 
 
@@ -57,9 +60,9 @@ spring:
     activate:
       on-profile: common
   datasource:
-    url: jdbc:mysql://mall-mysql.cpcauwygsgm8.ap-northeast-2.rds.amazonaws.com:3306/mall_product_service #ec2 환경변수
+    url: jdbc:mysql://mallmysql.cpcauwygsgm8.ap-northeast-2.rds.amazonaws.com:3306/mall_product #ec2 환경변수
     username: admin
-    password: asdf1234
+    password: aaaa1111
   jpa:
     hibernate:
       ddl-auto: update  # 테이블 자동 업데이트

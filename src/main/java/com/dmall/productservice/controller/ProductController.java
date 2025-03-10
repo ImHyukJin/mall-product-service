@@ -20,34 +20,11 @@ import com.dmall.productservice.repository.ProductRepository;
 @RequestMapping("/api/product")
 public class ProductController {
 
-	@Value("${server.env}")
-	private String env;
-	@Value("${server.port}")
-	private String serverPort;
-	@Value("${server.address}")
-	private String serverAddress;
-	@Value("${serverName}")
-	private String serverName;
+
 	
 	@Autowired
 	private ProductRepository productRepository;
-	
-	//서버가 잘 돌아가나
-	@GetMapping("/hc")
-	public ResponseEntity<?> healthCheck() {
-		Map<String, String> responseData = new TreeMap<>();
-		responseData.put("env", env);
-		responseData.put("serverPort", serverPort);
-		responseData.put("serverAddress", serverAddress);
-		responseData.put("serverName", serverName);
-		
-		return ResponseEntity.ok(responseData);
-	}
-	
-	@GetMapping("/env")
-	public ResponseEntity<?> getEnv() {
-		return ResponseEntity.ok(env);
-	}
+
 	
 	//전체 상품 목록 조회
 	@GetMapping("/")

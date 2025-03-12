@@ -21,7 +21,7 @@ public class ProductController {
     private ProductRepository productRepository;
 
     // 전체 상품 목록 조회 (HTML 페이지 렌더링)
-    @GetMapping("/")
+    @GetMapping()
     public String getAllProducts(Model model) {
         List<Product> products = productRepository.findAll();
         model.addAttribute("products", products);
@@ -29,7 +29,7 @@ public class ProductController {
     }
 
     // 상품 추가 (POST)
-    @PostMapping("/")
+    @PostMapping()
     public String addProduct(@ModelAttribute Product product) {
         productRepository.save(product);
         return "redirect:/product";  // 상품 추가 후 목록 페이지로 리다이렉트

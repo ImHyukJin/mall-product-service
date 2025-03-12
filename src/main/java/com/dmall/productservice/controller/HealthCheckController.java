@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/product")
 public class HealthCheckController {
 
 	@Value("${server.env}")
@@ -30,7 +30,6 @@ public class HealthCheckController {
 		responseData.put("serverPort", serverPort);
 		responseData.put("serverAddress", serverAddress);
 		responseData.put("serverName", serverName);
-		
 		return ResponseEntity.ok(responseData);
 	}
 	

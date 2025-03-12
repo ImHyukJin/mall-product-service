@@ -39,7 +39,7 @@ server:
  # address: 52.78.112.137
   address: 0.0.0.0
   
-serverName: blue_server
+serverName: product_blue
 ---
 
 spring:
@@ -52,7 +52,7 @@ server:
   # address: 52.78.112.137
   address: 0.0.0.0
   
-serverName: green_server
+serverName: product_green
 
 
 

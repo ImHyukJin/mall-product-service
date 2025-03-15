@@ -1,17 +1,17 @@
-name: Trigger MALL-INFRA CICD
+name: Trigger MALL-INFRA CI/CD
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  trigger-cicd:
+  trigger-infra:
     runs-on: ubuntu-latest
     steps:
-      - name: Send event to MALL-INFRA
+      - name: Trigger MALL-INFRA Workflow
         run: |
-          curl -X POST -H "Accept: application/vnd.github.everest-preview+json" \
+          curl -X POST -H "Accept: application/vnd.github.v3+json" \
                -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
-               https://api.github.com/repos/ImHyukJin/MALL-INFRA/actions/workflows/deploy.yml/dispatches \
-               -d '{"ref":"master","inputs":{"service":"mall_product"}}'
+               --data '{"event_type": "trigger-cicd", "client_payload": { "service": "${{ github.repository }}" }}' \
+               https://api.github.com/repos/YOUR_GITHUB_USERNAME/MALL-INFRA/dispatches

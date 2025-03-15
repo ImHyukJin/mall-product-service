@@ -3,7 +3,7 @@ name: Trigger MALL-INFRA CI/CD
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   trigger-infra:

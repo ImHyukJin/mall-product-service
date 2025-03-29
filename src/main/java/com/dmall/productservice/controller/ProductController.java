@@ -24,7 +24,7 @@ public class ProductController {
     @GetMapping()
     public String getAllProducts(Model model) {
         List<Product> products = productRepository.findAll();
-        model.addAttribute("products", products);
+        model.addAttribute("product", products);
         return "index";  // templates/index.html¿ª ∑ª¥ı∏µ
     }
 

@@ -1,12 +1,12 @@
 name: CICD
-
+       
 on:
   push:
     branches: [ "master" ]
-
+  
 permissions:
   contents: read
-
+  
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

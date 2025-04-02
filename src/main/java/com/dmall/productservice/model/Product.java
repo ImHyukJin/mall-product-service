@@ -11,7 +11,6 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //자동증가
 	private Long id;
-	
 	private String name;
 	private int price;
 	private String description;

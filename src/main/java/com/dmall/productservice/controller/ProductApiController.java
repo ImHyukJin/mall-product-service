@@ -20,8 +20,6 @@ import com.dmall.productservice.repository.ProductRepository;
 @RequestMapping("/api/product")
 public class ProductApiController {
 
-
-	
 	@Autowired
 	private ProductRepository productRepository;
 
@@ -46,7 +44,7 @@ public class ProductApiController {
 	private String serverAddress;
 	@Value("${serverName}")
 	private String serverName;
-	
+	    
 	//서버가 잘 돌아가나
 	@GetMapping("/hc")
 	public ResponseEntity<?> healthCheck() {

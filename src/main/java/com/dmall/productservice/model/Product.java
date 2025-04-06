@@ -16,7 +16,6 @@ public class Product {
 	private String description;
 	
 	//기본 생성자 , Getter , Setter
-	public Product() {}
 	
 	public Product(String name, int price, String description) {
 		super();
